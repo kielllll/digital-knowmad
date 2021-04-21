@@ -13,5 +13,21 @@ registerForm.addEventListener("submit", event => {
   // Simple data validation here
   const isValid = (firstName !== "" && lastName !== "" && mobileNumber.length === 13 && emailAddress !== "" && password !== "" && confirmPassword !== "" && password === confirmPassword);
   
-  console.log(isValid);
+  if(isValid) {
+    fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: {
+        firstName,
+        lastName,
+        mobileNumber,
+        emailAddress,
+        password
+      }
+    })
+    .then()
+    .then();
+  } else alert('Required field(s) is/are invalid.');
 });
