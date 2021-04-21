@@ -11,7 +11,7 @@ registerForm.addEventListener("submit", event => {
   const confirmPassword = document.querySelector("#confirm-password").value;
   
   // Simple data validation here
-  const isValid = (firstName && lastName && mobileNumber.length === 11 && emailAddress && password && confirmPassword && password === confirmPassword);
+  const isValid = (firstName !== "" && lastName !== "" && mobileNumber.length === 13 && emailAddress !== "" && password !== "" && confirmPassword !== "" && password === confirmPassword);
   
   console.log(isValid);
 });
