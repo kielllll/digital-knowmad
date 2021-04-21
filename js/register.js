@@ -1,6 +1,7 @@
-const registerForm = document.querySelector('#register-user');
+const registerForm = document.querySelector('#register-form');
 
 registerForm.addEventListener('submit', (event) => {
   event.preventDefault();
-  console.dir(event);
+  
+  
 });
