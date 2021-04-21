@@ -35,6 +35,12 @@ registerForm.addEventListener("submit", event => {
       })
     })
       .then(response => response.json())
-      .then(data => console.dir(data));
+      .then(data => {
+      if(data.data) {
+        window.location.replace('/login.html');
+      } else {
+        alert("Can't create a new user.")
+      }
+    });
   } else alert("Required field(s) is/are invalid.");
 });
