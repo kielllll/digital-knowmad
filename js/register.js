@@ -29,8 +29,16 @@ registerForm.addEventListener("submit", event => {
       },
       body: JSON.stringify(emailAddress)
     })
-    .then()
-    .then();
+    .then(res => res.JSON())
+    .then(data => {
+      if(!data.data) {
+        // Email is good
+        
+      } else {
+        // Email already exist
+        
+      }
+    });
     
     // Initiate registration process
     fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/register", {
