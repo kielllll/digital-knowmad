@@ -53,6 +53,7 @@ registerForm.addEventListener("submit", event => {
             .then(response => response.json())
             .then(data => {
               if (data.data) {
+                alert("Registration was successful.");
                 window.location.replace("/login.html");
               } else {
                 alert("Can't create a new user.");
