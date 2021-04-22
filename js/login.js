@@ -25,7 +25,7 @@ loginForm.addEventListener("submit", event => {
       if(data.data) {
         window.location.replace("./courses.html");
       } else {
-        alert("Invalid username/password.");
+        alert("User account was not found.");
       }
     });
   } else {
