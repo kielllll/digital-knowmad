@@ -21,6 +21,18 @@ registerForm.addEventListener("submit", event => {
     password === confirmPassword;
 
   if (isValid) {
+    // Check if user (email) already exist
+    fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/check-email", {
+      method: "POST",
+      header: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(emailAddress)
+    })
+    .then()
+    .then();
+    
+    // Initiate registration process
     fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/register", {
       method: "POST",
       headers: {

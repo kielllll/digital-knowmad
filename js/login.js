@@ -10,7 +10,10 @@ loginForm.addEventListener("submit", event => {
   const isValid = emailAddress !== "" && password !== "";
 
   if (isValid) {
-    console.log(emailAddress, password);
+    // fetch()
+    // .then()
+    // .then();
   } else {
+    alert("Missing required field(s).")
   }
 });
