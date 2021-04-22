@@ -10,9 +10,24 @@ loginForm.addEventListener("submit", event => {
   const isValid = emailAddress !== "" && password !== "";
 
   if (isValid) {
-    // fetch()
-    // .then()
-    // .then();
+    fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        emailAddress,
+        password
+      })
+    })
+    .then(res => res.json())
+    .then(data => {
+      if(data.data) {
+        window.location.replace("./courses.html");
+      } else {
+        alert("Invalid username/password.");
+      }
+    });
   } else {
     alert("Missing required field(s).")
   }
