@@ -24,7 +24,7 @@ registerForm.addEventListener("submit", event => {
     // Check if user (email) already exist
     fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/check-email", {
       method: "POST",
-      header: {
+      headers: {
         "Content-Type": "application/json"
       },
       body: JSON.stringify({ emailAddress })
@@ -32,32 +32,32 @@ registerForm.addEventListener("submit", event => {
       .then(res => res.json())
       .then(data => {
         if (!data.data) {
-          // Email is good
+          // Email is good// Email is good
           // Initiate registration process
-          // fetch(
-          //   "https://zeke-csp2-app-server.herokuapp.com/api/users/register",
-          //   {
-          //     method: "POST",
-          //     headers: {
-          //       "Content-Type": "application/json"
-          //     },
-          //     body: JSON.stringify({
-          //       firstName,
-          //       lastName,
-          //       mobileNumber,
-          //       emailAddress,
-          //       password
-          //     })
-          //   }
-          // )
-          //   .then(response => response.json())
-          //   .then(data => {
-          //     if (data.data) {
-          //       window.location.replace("/login.html");
-          //     } else {
-          //       alert("Can't create a new user.");
-          //     }
-          //   });
+          fetch(
+            "https://zeke-csp2-app-server.herokuapp.com/api/users/register",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify({
+                firstName,
+                lastName,
+                mobileNumber,
+                emailAddress,
+                password
+              })
+            }
+          )
+            .then(response => response.json())
+            .then(data => {
+              if (data.data) {
+                window.location.replace("/login.html");
+              } else {
+                alert("Can't create a new user.");
+              }
+            });
         } else {
           // Email already exist
           alert("Email is already in use.");
