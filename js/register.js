@@ -27,40 +27,41 @@ registerForm.addEventListener("submit", event => {
       header: {
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(emailAddress)
+      body: JSON.stringify({ emailAddress })
     })
-    .then(res => res.JSON())
-    .then(data => {
-      if(!data.data) {
-        // Email is good
-        
-      } else {
-        // Email already exist
-        
-      }
-    });
-    
-    // Initiate registration process
-    fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-        firstName,
-        lastName,
-        mobileNumber,
-        emailAddress,
-        password
-      })
-    })
-      .then(response => response.json())
+      .then(res => res.json())
       .then(data => {
-      if(data.data) {
-        window.location.replace('/login.html');
-      } else {
-        alert("Can't create a new user.")
-      }
-    });
+        if (!data.data) {
+          // Email is good
+          // Initiate registration process
+          // fetch(
+          //   "https://zeke-csp2-app-server.herokuapp.com/api/users/register",
+          //   {
+          //     method: "POST",
+          //     headers: {
+          //       "Content-Type": "application/json"
+          //     },
+          //     body: JSON.stringify({
+          //       firstName,
+          //       lastName,
+          //       mobileNumber,
+          //       emailAddress,
+          //       password
+          //     })
+          //   }
+          // )
+          //   .then(response => response.json())
+          //   .then(data => {
+          //     if (data.data) {
+          //       window.location.replace("/login.html");
+          //     } else {
+          //       alert("Can't create a new user.");
+          //     }
+          //   });
+        } else {
+          // Email already exist
+          alert("Email is already in use.");
+        }
+      });
   } else alert("Required field(s) is/are invalid.");
 });
