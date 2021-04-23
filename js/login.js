@@ -29,12 +29,14 @@ loginForm.addEventListener("submit", event => {
           // Registered User
           fetch(
             `https://zeke-csp2-app-server.herokuapp.com/api/users/details?id=${userId}`,
-            { method: "GET"}
+            { method: "GET" }
           )
             .then(res => res.json())
             .then(data => {
-              console.log(data);
-              // window.location.replace("./courses.html");
+              const { _id: userId, isAdmin } = data.userDetails;
+              localStorage.setItem("userId", userId);
+              localStorage.setItem("isAdmin", isAdmin);
+              window.location.replace("./courses.html");
             });
         } else {
           alert("User account was not found.");
