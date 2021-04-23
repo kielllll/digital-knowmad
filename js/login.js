@@ -20,21 +20,23 @@ loginForm.addEventListener("submit", event => {
         password
       })
     })
-    .then(res => res.json())
-    .then(data => {
-      if(data.data) {
-        // Authentication
-        const {_id:userId} = data.userDetails;
-        console.log(userId);
-        // Registered User
-        // fetch("").then(res => res.json()).then(data => {});
-        
-        window.location.replace("./courses.html");
-      } else {
-        alert("User account was not found.");
-      }
-    });
+      .then(res => res.json())
+      .then(data => {
+        if (data.data) {
+          // Authentication
+          const { _id: userId } = data.userDetails;
+
+          // Registered User
+          fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/detauls")
+            .then(res => res.json())
+            .then(data => {
+              window.location.replace("./courses.html");
+            });
+        } else {
+          alert("User account was not found.");
+        }
+      });
   } else {
-    alert("Missing required field(s).")
+    alert("Missing required field(s).");
   }
 });
