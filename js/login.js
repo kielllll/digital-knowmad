@@ -27,7 +27,9 @@ loginForm.addEventListener("submit", event => {
           const { _id: userId } = data.userDetails;
 
           // Registered User
-          fetch("https://zeke-csp2-app-server.herokuapp.com/api/users/detauls")
+          fetch(
+            `https://zeke-csp2-app-server.herokuapp.com/api/users/details?id=${userId}`
+          )
             .then(res => res.json())
             .then(data => {
               window.location.replace("./courses.html");
