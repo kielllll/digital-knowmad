@@ -23,6 +23,11 @@ loginForm.addEventListener("submit", event => {
     .then(res => res.json())
     .then(data => {
       if(data.data) {
+        // Authentication
+        
+        // Registered User
+        fetch("").then(res => res.json()).then(data => {});
+        
         window.location.replace("./courses.html");
       } else {
         alert("User account was not found.");
