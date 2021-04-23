@@ -24,9 +24,10 @@ loginForm.addEventListener("submit", event => {
     .then(data => {
       if(data.data) {
         // Authentication
-        
+        const {_id:userId} = data.userDetails;
+        console.log(userId);
         // Registered User
-        fetch("").then(res => res.json()).then(data => {});
+        // fetch("").then(res => res.json()).then(data => {});
         
         window.location.replace("./courses.html");
       } else {
