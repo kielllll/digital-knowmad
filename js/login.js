@@ -28,8 +28,7 @@ loginForm.addEventListener("submit", event => {
 
           // Registered User
           fetch(
-            `https://zeke-csp2-app-server.herokuapp.com/api/users/details?id=${userId}`,
-            { method: "GET" }
+            `https://zeke-csp2-app-server.herokuapp.com/api/users/details?id=${userId}`
           )
             .then(res => res.json())
             .then(data => {
