@@ -1,2 +1,2 @@
-// Check if a user is logged-in
-const userId = localStorage.getItem("")
+const isAdmin = localStorage.getItem('isAdmin');
+const userId = localStorage.getItem('userId');
