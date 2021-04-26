@@ -1,1 +1,3 @@
-let isAdmin = localStorage.getItem('isAdmin');
+const isAdmin = localStorage.getItem('isAdmin');
+const userId = localStorage.getItem('userId');
+
