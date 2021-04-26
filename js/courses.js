@@ -7,6 +7,4 @@ const createCourse = document.querySelector('#admin-button');
 if(!isAdmin || isAdmin === "false") {
  // not an admin
   createCourse.innerHTML = null;
-} else {
-// an admin  
 }
