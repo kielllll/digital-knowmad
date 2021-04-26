@@ -1,12 +1,17 @@
-const isAdmin = localStorage.getItem('isAdmin');
-const userId = localStorage.getItem('userId');
+const isAdmin = localStorage.getItem("isAdmin");
+const userId = localStorage.getItem("userId");
 
 // Select all navigation elements if user is logged-in
-const userLoggedInElements = document.querySelectorAll('.user-is-in');
+const userLoggedInElements = document.querySelectorAll(".user-is-in");
 
 // Select all navigation elements if user is logged-out
-const userLoggedOutElements = document.querySelectorAll('.user-is-out');
+const userLoggedOutElements = document.querySelectorAll(".user-is-out");
 
-if(userId) {
-  
+if (userId && typeof userId === "string") {
+  userLoggedInElements.forEach(element => {
+    element.classList.toggle("hide");
+  });
+  userLoggedOutElements.forEach(element => {
+    element.classList.toggle("hide");
+  });
 }
