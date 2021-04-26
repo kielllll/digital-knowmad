@@ -7,7 +7,7 @@
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, shrink-to-fit=no"
     />
 
-    <title>Digital Knowmad &middot; Courses</title>
+    <title>Digital Knowmad &middot; Create a new course</title>
 
     <!-- fontawesome icons -->
     <link
@@ -35,7 +35,7 @@
     />
 
     <!-- external css -->
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./../assets/css/style.css" />
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -53,8 +53,8 @@
           <li class="nav-item">
             <a href="./index.html" class="nav-link">Home</a>
           </li>
-          <li class="nav-item active">
-            <a href="./courses.html" class="nav-link">Courses</a>
+          <li class="nav-item ">
+            <a href="./courses.html" class="nav-link active">Courses</a>
           </li>
           <li class="nav-item ">
             <a href="./profile.html" class="nav-link">Profile</a>
@@ -74,37 +74,44 @@
 
     <!-- end nav -->
 
-    <header class="jumbotron text-center">
-      <h1>Zuitter Booking Services</h1>
-      <p class="lead">Booking for everyone, everywhere</p>
-      <a href="./courses.html" class="btn btn-outline-primary"> Book Now! </a>
-    </header>
+    <div class="container my-5">
+      <h2 class="text-center my-5">Create A New Course</h2>
+      <form id="create-course">
+        <div class="form-row">
+          <div class="form-group col-md-9">
+            <input
+              type="text"
+              id="course-name"
+              class="form-control"
+              placeholder="Course Name"
+            />
+          </div>
 
-    <!-- end jumbo -->
-
-    <main class="container my-5">
-      <div id="admin-button" class="row">
-        <div class="col-md-12">
-          <a href="./new_course.html" class="btn btn-block btn-primary">
-            Create a new course
-          </a>
+          <div class="form-group col-md-3">
+            <input
+              type="number"
+              id="course-price"
+              class="form-control"
+              placeholder="Course Price"
+            />
+          </div>
         </div>
-      </div>
-      <div id="coursesContainer" class="row">
-        <div class="col-md-12">
-          <section class="jumbotron text-center my-5">
-            <h2 class="my-5">
-              <span class="spinner-border text-primary"></span> Fetching
-              courses...
-            </h2>
-          </section>
-        </div>
-      </div>
-      <!-- end row -->
-    </main>
-    <!-- end cards -->
 
-    <footer class="footer bg-primary">
+        <input
+          type="text"
+          id="courseDescription"
+          class="form-control"
+          placeholder="Course Description"
+        />
+        <!-- end form row -->
+
+        <button type="submit" class="btn btn-block btn-primary my-3">
+          Create Course
+        </button>
+      </form>
+    </div>
+
+    <footer class="footer bg-primary fixed-bottom">
       <p class="p-3 mb-0 text-center text-white">
         Copyright &copy; 2021 by Ezekiel Tarranza
       </p>
@@ -139,6 +146,6 @@
     <script src="./js/script.js"></script>
 
     <!-- external js -->
-    <script src="./js/courses.js"></script>
+    <script src="./js/newCourse.js"></script>
   </body>
 </html>
