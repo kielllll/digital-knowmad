@@ -32,9 +32,11 @@ loginForm.addEventListener("submit", event => {
           )
             .then(res => res.json())
             .then(data => {
-              const { _id: userId, isAdmin } = data.userDetails;
+              const { _id: userId, isAdmin, firstName, lastName } = data.userDetails;
               localStorage.setItem("userId", userId);
               localStorage.setItem("isAdmin", isAdmin);
+              localStorage.setItem("firstName", firstName);
+              localStorage.setItem("lastName", lastName);
               window.location.replace("./courses.html");
             });
         } else {
