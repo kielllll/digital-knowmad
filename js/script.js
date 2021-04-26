@@ -19,4 +19,7 @@ if (userId && typeof userId === "string") {
 // Logout
 const logout = document.querySelector("#log-out");
 
-
+logout.addEventListener('click', (event) => {
+  localStorage.clear();
+  window.location.replace("./login.html");
+});
