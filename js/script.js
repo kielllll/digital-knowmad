@@ -15,3 +15,8 @@ if (userId && typeof userId === "string") {
     element.classList.toggle("hide");
   });
 }
+
+// Logout
+const logout = document.querySelector("#log-out");
+
+
