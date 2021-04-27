@@ -16,11 +16,11 @@ if (userId && typeof userId === "string") {
   });
 
   // Get the name of the user
-  const firstName = localStorage.getItem("firstName");
-  const lastName = localStorage.getItem("lastName");
+  const fName = localStorage.getItem("firstName");
+  const lName = localStorage.getItem("lastName");
   const profile = (document.querySelector(
     "#profile"
-  ).innerText = `${firstName} ${lastName}`);
+  ).innerText = `${fName} ${lName}`);
 }
 
 // Logout
