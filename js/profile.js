@@ -23,7 +23,7 @@ if (userId && typeof userId === "string") {
 
       profileContainer.innerHTML = `
       <div class="col-md-12">
-        <section class="jumbotron my-5">
+        <section class="my-5">
         	<div class="mb-3">
             <label for="first-name" class="form-label">First Name</label>
             <input type="text" class="form-control" id="first-name" value="${firstName}" readonly>
