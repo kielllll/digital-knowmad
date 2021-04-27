@@ -23,26 +23,34 @@ if (userId && typeof userId === "string") {
 
       profileContainer.innerHTML = `
       <div class="col-md-12">
-				<section class="jumbotron my-5">		
-					<h3 class="text-center">First Name: ${firstName}</h3>
-					<h3 class="text-center">Last Name: ${lastName}</h3>
-					<h3 class="text-center">Email: ${emailAddress}</h3>
-					<h3 class="mt-5">Class Enrollment History</h3>
-					<table class="table">
-						<thead>
-							<tr>
-								<th> Course ID </th>
-								<th> Enrolled On </th>
-								<th> Status </th>
-							</tr>
-						</thead>
-						<tbody>
-							${enrollments}
-						</tbody>
-					</table> 
-
-				</section>
-			</div>
+        <section class="jumbotron my-5">
+        	<div class="mb-3">
+            <label for="first-name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first-name" value="${firstName}" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="last-name" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="last-name" value="${lastName}" readonly>
+          </div>
+          <div class="mb-3">
+            <label for="email-address" class="form-label">First Name</label>
+            <input type="email" class="form-control" id="email-address" value="${emailAddress}" readonly>
+          </div>
+          <h3 class="mt-5">Class Enrollment History</h3>
+          <table class="table">
+            <thead>
+              <tr>
+                <th> Course Name </th>
+                <th> Enrolled On </th>
+                <th> Status </th>
+              </tr>
+            </thead>
+            <tbody>
+              ${enrollments}
+            </tbody>
+          </table> 
+        </section>
+      </div>
       `;
     });
 } else window.location.replace("./login.html");
