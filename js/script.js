@@ -1,4 +1,4 @@
-const isAdmin = localStorage.getItem("isAdmin");
+const isAdmin = (localStorage.getItem("isAdmin") == "true");
 const userId = localStorage.getItem("userId");
 
 // Select all navigation elements if user is logged-in
