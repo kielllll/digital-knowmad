@@ -11,7 +11,7 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses`)
   .then(res => res.json())
   .then(data => {
     // Display all courses
-    const course = data.courses.map(course => `
+    const courses = data.courses.map(course => `
       <div class="col-md-6 my-3">
                  <div class='card'>
               <div class='card-body'>
@@ -41,5 +41,5 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses`)
     `);
     document.querySelector(
       "#courses-container"
-    ).innerHTML = course.join("");
+    ).innerHTML = courses.join("");
   });
