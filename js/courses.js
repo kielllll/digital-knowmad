@@ -10,8 +10,15 @@ if (!isAdmin) {
 fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses`)
   .then(res => res.json())
   .then(data => {
+    // if non-admin
+    let courses;
+    if (!isAdmin) {
+      courses = data.courses.filter(course => course.isActive);
+    } else courses = data.courses;
+
     // Display all courses
-    const courses = data.courses.map(course => `
+    const coursesList = courses.map(
+      course => `
       <div class="col-md-6 my-3">
                  <div class='card'>
               <div class='card-body'>
@@ -38,8 +45,9 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses`)
               </div>
           </div>
       </div>
-    `);
-    document.querySelector(
-      "#courses-container"
-    ).innerHTML = courses.join("");
+    `
+    );
+    document.querySelector("#courses-container").innerHTML = coursesList.join(
+      ""
+    );
   });
