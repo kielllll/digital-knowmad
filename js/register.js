@@ -1,5 +1,10 @@
 const registerForm = document.querySelector("#register-form");
 
+// Check if a user is logged-in
+if (userId && typeof userId === "string") {
+  window.location.replace("./profile.html");
+}
+
 registerForm.addEventListener("submit", event => {
   event.preventDefault();
 
