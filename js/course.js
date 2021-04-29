@@ -4,5 +4,11 @@ const courseId = queryStringObject.get("id");
 
 // Send a request to retrieve a course description
 fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses?id=${courseId}`)
-  .then()
-  .then();
+  .then(res => res.json())
+  .then(data => {
+  const {name, description, price} = data.course;
+  
+  document.querySelector("#course-name").innerText = name;
+  document.querySelector("#course-description").innerText = description;
+  document.querySelector("#course-price").innerText = price;
+});
