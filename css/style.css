@@ -28,7 +28,7 @@
   border-radius: 0;
 }
 
-#hero-image: {
+#hero-image {
   position: relative;  
 }
 
@@ -38,8 +38,8 @@
   position: absolute;
   left: 0;
   top: 0;
-/*   width: 100%;
-  height: 100%; */
+  width: 100%;
+  height: 100%;
   opacity: 0.6;  
   background-image: url("https://cdn.glitch.com/2eeeeaf5-3416-499d-86db-12d8f28d9341%2Fbackground.jpg?v=1619691642223");
   background-size: cover;
@@ -48,6 +48,6 @@
   background-position: center;
 }
 
-#hero-content: {
+#hero-content {
   position: relative;  
 }
