@@ -21,6 +21,9 @@
 
 /* Remove rounded edges */
 .btn,
-.card {
+.card,
+.navbar-toggler,
+.jumbotron,
+.form-control {
   border-radius: 0;
 }
