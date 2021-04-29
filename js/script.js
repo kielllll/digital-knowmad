@@ -1,4 +1,4 @@
-const isAdmin = (localStorage.getItem("isAdmin") == "true");
+const isAdmin = (localStorage.getItem("isAdmin") == "true"); // Convert string to boolean - Local Storage only saves string values
 const userId = localStorage.getItem("userId");
 
 // Select all navigation elements if user is logged-in
