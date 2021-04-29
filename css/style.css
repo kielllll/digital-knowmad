@@ -27,3 +27,27 @@
 .form-control {
   border-radius: 0;
 }
+
+#hero-image: {
+  position: relative;  
+}
+
+#hero-image:before {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+/*   width: 100%;
+  height: 100%; */
+  opacity: 0.6;  
+  background-image: url("https://cdn.glitch.com/2eeeeaf5-3416-499d-86db-12d8f28d9341%2Fbackground.jpg?v=1619691642223");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+#hero-content: {
+  position: relative;  
+}
