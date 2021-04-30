@@ -14,10 +14,19 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses?id=${courseId}`)
   });
 
 // Do not allow non-authenticated users or admins to enroll
+const btnEnroll = document.querySelector("#btn-enroll");
 if (!userId || isAdmin) {
-  document.querySelector("#btn-enroll").style.display = "none";
+  btnEnroll.style.display = "none";
 } else {
-  document.querySelector("#btn-enroll").addEventListener("click", event => {
-    console.log("enrolled");
+  btnEnroll.addEventListener("click", event => {
+    fetch(`https://zeke-csp2-app-server.herokuapp.com/api/users/enroll`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.parse({
+        
+      })
+    }).then().then()
   });
 }
