@@ -6,15 +6,18 @@ const courseId = queryStringObject.get("id");
 fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses?id=${courseId}`)
   .then(res => res.json())
   .then(data => {
-  const {name, description, price} = data.course;
-  
-  document.querySelector("#course-name").innerText = name;
-  document.querySelector("#course-description").innerText = description;
-  document.querySelector("#course-price").innerText = price;
-});
+    const { name, description, price } = data.course;
+
+    document.querySelector("#course-name").innerText = name;
+    document.querySelector("#course-description").innerText = description;
+    document.querySelector("#course-price").innerText = price;
+  });
 
 // Do not allow non-authenticated users or admins to enroll
 if (!userId || isAdmin) {
-  console.log("passed");
   document.querySelector("#btn-enroll").style.display = "none";
+} else {
+  document.querySelector("#btn-enroll").addEventListener("click", event => {
+    console.log("enrolled");
+  });
 }
