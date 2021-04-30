@@ -6,7 +6,7 @@ const courseId = queryStringObject.get("id");
 fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses?id=${courseId}`)
   .then(res => res.json())
   .then(data => {
-    const { name, description, price } = data.course;
+    const { description, price } = data.course;
 
     document.querySelector("#course-name").innerText = name;
     document.querySelector("#course-description").innerText = description;
@@ -24,9 +24,21 @@ if (!userId || isAdmin) {
       headers: {
         "Content-Type": "application/json"
       },
-      body: JSON.parse({
-        
+      body: JSON.stringify({
+        userId,
+        courseId
       })
-    }).then().then()
+    })
+      .then(res => res.json())
+      .then(data => {
+        if (data.message) {
+          // Enrollment was successful
+          alert("Success: Enrollment was successful!");
+          window.location.replace("./courses.html");
+        } else {
+          // Enrollment failed
+          alert("Error: Enrollment was unsuccessful.");
+        }
+      });
   });
 }
