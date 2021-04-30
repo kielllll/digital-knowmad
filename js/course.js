@@ -6,7 +6,7 @@ const courseId = queryStringObject.get("id");
 fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses?id=${courseId}`)
   .then(res => res.json())
   .then(data => {
-    const { description, price } = data.course;
+    const { name, description, price } = data.course;
 
     document.querySelector("#course-name").innerText = name;
     document.querySelector("#course-description").innerText = description;
