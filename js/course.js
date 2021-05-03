@@ -12,7 +12,9 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses?id=${courseId}`)
     document.querySelector("#course-description").innerText = description;
     document.querySelector("#course-price").innerText = price;
 
-    const enrolledStudents = enrollees.map(
+    
+  
+  const enrolleesList = enrollees.map(
       ({ firstName, lastName, emailAddress }) =>
         `
         <tr>
@@ -20,9 +22,9 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses?id=${courseId}`)
           <td>${emailAddress}</td>
         <tr>
       `
-    );
-
-    console.log(enrolledStudents.join(""));
+    ).join("");
+  
+    document.querySelector("tbody").innerHTML = enrolleesList;
   });
 
 // Do not allow non-authenticated users or admins to enroll
