@@ -21,6 +21,14 @@ if (userId && typeof userId === "string") {
         enrollments
       } = data.userDetails;
 
+      const enrollmentsElement = enrollments.map(({courseName, enrolledOn, status}) => `
+        <tr>
+          <td>${courseName}</td>
+          <td>${enrolledOn}</td>
+          <td>${status}</td>
+        </tr>
+      `).join("");
+    
       profileContainer.innerHTML = `
       <div class="col-md-12">
         <section class="my-5">
@@ -46,7 +54,7 @@ if (userId && typeof userId === "string") {
               </tr>
             </thead>
             <tbody>
-              ${enrollments}
+              ${enrollmentsElement}
             </tbody>
           </table> 
         </section>
