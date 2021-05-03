@@ -12,19 +12,22 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses?id=${courseId}`)
     document.querySelector("#course-description").innerText = description;
     document.querySelector("#course-price").innerText = price;
 
-    
-  
-  const enrolleesList = enrollees.map(
-      ({ firstName, lastName, emailAddress }) =>
-        `
+    if (userId && isAdmin) {
+      const enrolleesList = enrollees
+        .map(
+          ({ firstName, lastName, emailAddress }) =>
+            `
         <tr>
           <td>${lastName}, ${firstName}</td>
           <td>${emailAddress}</td>
         <tr>
       `
-    ).join("");
-  
-    document.querySelector("tbody").innerHTML = enrolleesList;
+        )
+        .join("");
+
+      document.querySelector("tbody").innerHTML = enrolleesList;
+    } else
+      document.querySelector("#enrollees-table").style.display = "none";
   });
 
 // Do not allow non-authenticated users or admins to enroll
