@@ -26,7 +26,7 @@ if (userId && typeof userId === "string") {
           ({ courseName, enrolledOn, status }) => `
         <tr>
           <td>${courseName}</td>
-          <td>${new Date(enrolledOn).toLocaleString()}</td>
+          <td>${new Date(enrolledOn).toLocaleString('en-PH', {timezone: 'Asia/Manila'})}</td>
           <td>${status.toUpperCase()}</td>
         </tr>
       `
