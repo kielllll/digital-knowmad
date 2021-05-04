@@ -17,8 +17,17 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses`)
     } else courses = data.courses;
 
     // Display all courses
-    const coursesList = courses.map(
-      course => `
+    const coursesList = courses.map(course => {
+      const buttons =
+        userId && isAdmin
+          ? `<div class="col-sm-12 col-md-4 mb-1">
+                      <a href="./edit_course.html?id=${course._id}" class="btn btn-outline-secondary btn-block btn-course">Edit</a>
+                    </div>
+                    <div class="col-sm-12 col-md-4 mb-1">
+                      <a href="./delete_course.html?id=${course._id}" class="btn btn-outline-danger btn-block btn-course">Delete</a>
+                    </div>`
+          : ``;
+      return `
       <div class="col-md-6 my-3">
                  <div class='card'>
               <div class='card-body'>
@@ -35,18 +44,13 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses`)
                     <div class="col-sm-12 col-md-4 mb-1">
                       <a href="./course.html?id=${course._id}" class="btn btn-outline-primary btn-block btn-course">View</a>
                     </div>
-                    <div class="col-sm-12 col-md-4 mb-1">
-                      <a href="./edit_course.html?id=${course._id}" class="btn btn-outline-secondary btn-block btn-course">Edit</a>
-                    </div>
-                    <div class="col-sm-12 col-md-4 mb-1">
-                      <a href="./delete_course.html?id=${course._id}" class="btn btn-outline-danger btn-block btn-course">Delete</a>
-                    </div>
+                    ${buttons}
                   </div>
               </div>
           </div>
       </div>
-    `
-    );
+    `;
+    });
     document.querySelector("#courses-container").innerHTML = coursesList.join(
       ""
     );
