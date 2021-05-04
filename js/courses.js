@@ -21,11 +21,11 @@ fetch(`https://zeke-csp2-app-server.herokuapp.com/api/courses`)
       const buttons =
         userId && isAdmin
           ? `<div class="col-sm-12 col-md-4 mb-1">
-                      <a href="./edit_course.html?id=${course._id}" class="btn btn-outline-secondary btn-block btn-course">Edit</a>
-                    </div>
-                    <div class="col-sm-12 col-md-4 mb-1">
-                      <a href="./delete_course.html?id=${course._id}" class="btn btn-outline-danger btn-block btn-course">Delete</a>
-                    </div>`
+              <a href="./edit_course.html?id=${course._id}" class="btn btn-outline-secondary btn-block btn-course">Edit</a>
+            </div>
+            <div class="col-sm-12 col-md-4 mb-1">
+              <a href="./delete_course.html?id=${course._id}" class="btn btn-outline-danger btn-block btn-course">Delete</a>
+            </div>`
           : ``;
       return `
       <div class="col-md-6 my-3">
